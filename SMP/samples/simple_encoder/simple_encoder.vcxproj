@@ -88,7 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..;$(SolutionDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..;$(SolutionDir);$(SolutionDir)x86</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -105,7 +105,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..;$(SolutionDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..;$(SolutionDir);$(SolutionDir)x86</AdditionalIncludeDirectories>
+      <AdditionalOptions>/D "CONFIG_RATE_CTRL = 1" %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,12 +150,16 @@
     <ClCompile Include="..\..\..\ivfenc.c" />
     <ClCompile Include="..\..\..\tools_common.c" />
     <ClCompile Include="..\..\..\video_writer.c" />
+    <ClCompile Include="..\..\..\vp9\encoder\vp9_firstpass.c" />
+    <ClCompile Include="..\..\..\vp9\simple_encode.cc" />
     <ClCompile Include="..\..\..\y4minput.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\ivfenc.h" />
     <ClInclude Include="..\..\..\tools_common.h" />
     <ClInclude Include="..\..\..\video_writer.h" />
+    <ClInclude Include="..\..\..\vp9\encoder\vp9_firstpass.h" />
+    <ClInclude Include="..\..\..\vp9\simple_encode.h" />
     <ClInclude Include="..\..\..\y4minput.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

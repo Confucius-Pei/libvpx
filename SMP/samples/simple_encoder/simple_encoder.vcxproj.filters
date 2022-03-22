@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\simple_encode">
+      <UniqueIdentifier>{44514b3f-1a7a-46e5-aa62-9db9d39e2f86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\examples\simple_encoder.c">
@@ -30,6 +33,12 @@
     <ClCompile Include="..\..\..\ivfenc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\vp9\simple_encode.cc">
+      <Filter>Source Files\simple_encode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\vp9\encoder\vp9_firstpass.c">
+      <Filter>Source Files\simple_encode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\tools_common.h">
@@ -43,6 +52,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\ivfenc.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\vp9\simple_encode.h">
+      <Filter>Source Files\simple_encode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\vp9\encoder\vp9_firstpass.h">
+      <Filter>Source Files\simple_encode</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
