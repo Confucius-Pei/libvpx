@@ -214,7 +214,7 @@ int main(int argc, char **argv) {
   writer = vpx_video_writer_open(outfile_arg, kContainerIVF, &info);
   if (!writer) die("Failed to open %s for writing.", outfile_arg);
 
-  if (!(infile = fopen(infile_arg, "rb")))
+  if (0 != fopen_s(&infile,infile_arg, "rb"))
     die("Failed to open %s for reading.", infile_arg);
 
   if (vpx_codec_enc_init(&codec, encoder->codec_interface(), &cfg, 0))
