@@ -106,6 +106,7 @@
 
 static const char *exec_name;
 
+//vp9 352 288 ./bus_352x288_420_f20_b8.yuv ./out.ivf 8 1 8
 void usage_exit(void) {
   fprintf(stderr,
           "Usage: %s <codec> <width> <height> <infile> <outfile> "
@@ -153,7 +154,7 @@ int main(int argc, char **argv) {
   VpxVideoInfo info = { 0, 0, 0, { 0, 0 } };
   VpxVideoWriter *writer = NULL;
   const VpxInterface *encoder = NULL;
-  const int fps = 30;
+  const int fps = 4;
   const int bitrate = 200;
   int keyframe_interval = 0;
   int max_frames = 0;
