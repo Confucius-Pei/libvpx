@@ -21,8 +21,8 @@ const int height_ = 288;
 const int frame_rate_num_ = 30;
 const int frame_rate_den_ = 1;
 const int target_bitrate_ = 1000;
-const int num_frames_ = 17;
-const std::string in_file_path_str_;//= libvpx_test::GetDataPath() + "/bus_352x288_420_f20_b8.yuv";
+const int num_frames_ = 8;
+const std::string in_file_path_str_ = "./bus_352x288_420_f20_b8.yuv";
 }
 
 void SimpleEncodeTest_EncodeFrame() {
