@@ -24,6 +24,9 @@
     <ClCompile Include="..\..\..\vp9\encoder\vp9_firstpass.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\ivfenc.h">
