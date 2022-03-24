@@ -68,3 +68,7 @@
 /vpxenc.dox
 TAGS
 SMP/out
+SMP/samples/simple_encode/Debug
+SMP/samples/simple_encode/Release
+SMP/samples/simple_encoder/Release
+SMP/samples/simple_encoder/Debug
