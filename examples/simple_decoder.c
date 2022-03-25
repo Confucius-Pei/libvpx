@@ -87,6 +87,30 @@
 
 static const char *exec_name;
 
+void vpx_image_write(const vpx_image_t *img, char *filename, int frame_number) {
+  char buf[1024];
+  snprintf(buf, sizeof(buf), "%s-%d", filename, frame_number);
+  FILE *f;
+  int i;
+
+  f = fopen(buf, "wb");
+
+  int plane;
+  for (plane = 0; plane < 3; ++plane) {
+    const unsigned char *buf = img->planes[plane];
+    const int stride = img->stride[plane];
+    const int w = vpx_img_plane_width(img, plane) *
+                  ((img->fmt & VPX_IMG_FMT_HIGHBITDEPTH) ? 2 : 1);
+    const int h = vpx_img_plane_height(img, plane);
+    int y;
+    for (y = 0; y < h; ++y) {
+      fwrite(buf, 1, w, f);
+      buf += stride;
+    }
+  }
+  fclose(f);
+}
+
 void usage_exit(void) {
   fprintf(stderr, "Usage: %s <infile> <outfile>\n", exec_name);
   exit(EXIT_FAILURE);
@@ -131,6 +155,7 @@ int main(int argc, char **argv) {
 
     while ((img = vpx_codec_get_frame(&codec, &iter)) != NULL) {
       vpx_img_write(img, outfile);
+      vpx_image_write(img, argv[2], frame_cnt);
       ++frame_cnt;
     }
   }
@@ -138,6 +163,7 @@ int main(int argc, char **argv) {
   printf("Processed %d frames.\n", frame_cnt);
   if (vpx_codec_destroy(&codec)) die_codec(&codec, "Failed to destroy codec");
 
+  //ffplay -f rawvideo -pixel_format yuv420p -video_size 352x288 pic.png
   printf("Play: ffplay -f rawvideo -pix_fmt yuv420p -s %dx%d %s\n",
          info->frame_width, info->frame_height, argv[2]);
 
