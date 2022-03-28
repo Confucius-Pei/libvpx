@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\proj\github\libvpx\SMP\out\Release\simple_encoder.exe</FullPath>
+      <FullPath>G:\gitcode\libvpx\SMP\out\Win32\Release\simple_encoder.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

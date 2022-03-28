@@ -6,8 +6,14 @@ MinimumVisualStudioVersion = 12.0.30501.0
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libvpx", "libvpx.vcxproj", "{8293418A-603A-4119-B7B4-1E6204606BA9}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "simple_encoder", "samples\simple_encoder\simple_encoder.vcxproj", "{280707E9-F39C-46A4-9438-7EEA0ED59B3C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8293418A-603A-4119-B7B4-1E6204606BA9} = {8293418A-603A-4119-B7B4-1E6204606BA9}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "simple_decoder", "samples\simple_decoder\simple_decoder.vcxproj", "{E4C46991-8B0F-4631-9DC4-D3EFF079BD1F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8293418A-603A-4119-B7B4-1E6204606BA9} = {8293418A-603A-4119-B7B4-1E6204606BA9}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

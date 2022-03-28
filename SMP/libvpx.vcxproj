@@ -13,24 +13,26 @@
     <Import Project="$(VCTargetsPath)\BuildCustomizations\yasm.props" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)out\</OutDir>
+    <OutDir>$(SolutionDir)out\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
-    <OutDir>$(SolutionDir)out\</OutDir>
+    <OutDir>$(SolutionDir)out\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)out\</OutDir>
+    <OutDir>$(SolutionDir)out\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
-    <OutDir>$(SolutionDir)out\</OutDir>
+    <OutDir>$(SolutionDir)out\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <AdditionalIncludeDirectories>.\;..\;.\x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4752;4703%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ProgramDataBaseFileName>$(OutDir)\$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Lib>
       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
     </Lib>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)"\include
@@ -152,9 +154,11 @@ del /f /q $(OutDir)\licenses\libvpx.txt
     <ClCompile>
       <AdditionalIncludeDirectories>.\;..\;.\x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4752;4703%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ProgramDataBaseFileName>$(OutDir)\$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>.\libvpx.def</ModuleDefinitionFile>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
     </Link>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)"\include
@@ -276,9 +280,11 @@ del /f /q $(OutDir)\licenses\libvpx.txt
     <ClCompile>
       <AdditionalIncludeDirectories>.\;..\;.\x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4752;4703%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ProgramDataBaseFileName>$(OutDir)\$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Lib>
       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
     </Lib>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)"\include
@@ -400,9 +406,11 @@ del /f /q $(OutDir)\licenses\libvpx.txt
     <ClCompile>
       <AdditionalIncludeDirectories>.\;..\;.\x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4752;4703%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ProgramDataBaseFileName>$(OutDir)\$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile>.\libvpx.def</ModuleDefinitionFile>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
     </Link>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)"\include
